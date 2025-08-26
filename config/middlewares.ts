@@ -2,7 +2,18 @@ export default [
   'strapi::logger',
   'strapi::errors',
   'strapi::security',
-  'strapi::cors',
+  {
+    name: 'strapi::cors',
+    config: {
+      enabled: true,
+      headers: '*',
+      origin: [
+        'https://prodfront-one.vercel.app', 
+        'https://pretty-novelty-2b255ff22b.strapiapp.com', 
+      ],
+      keepHeader: true,
+    },
+  },
   'strapi::poweredBy',
   'strapi::query',
   'strapi::body',
