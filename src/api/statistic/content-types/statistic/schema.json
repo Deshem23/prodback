@@ -1,0 +1,54 @@
+{
+  "kind": "singleType",
+  "collectionName": "statistics",
+  "info": {
+    "singularName": "statistic",
+    "pluralName": "statistics",
+    "displayName": "Statistic"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "barChartTitle": {
+      "type": "string",
+      "required": true
+    },
+    "barChartLabels": {
+      "type": "json",
+      "required": true
+    },
+    "barChartData": {
+      "type": "json",
+      "required": true
+    },
+    "barChartDatasetLabel": {
+      "type": "string",
+      "required": true
+    },
+    "barChartColor": {
+      "type": "string"
+    },
+    "pieChartTitle": {
+      "type": "string",
+      "required": true
+    },
+    "pieChartLabels": {
+      "type": "json",
+      "required": true
+    },
+    "pieChartData": {
+      "type": "json",
+      "required": true
+    },
+    "pieChartDatasetLabel": {
+      "type": "string",
+      "required": true
+    },
+    "pieChartColors": {
+      "type": "json",
+      "required": true
+    }
+  }
+}

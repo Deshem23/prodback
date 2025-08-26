@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chantiers",
+  "info": {
+    "singularName": "chantier",
+    "pluralName": "chantiers",
+    "displayName": "Chantier"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    }
+  }
+}
