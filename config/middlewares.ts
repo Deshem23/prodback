@@ -5,13 +5,11 @@ export default [
   {
     name: 'strapi::cors',
     config: {
-      enabled: true,
-      headers: '*',
       origin: (ctx) => {
         const requestOrigin = ctx.request.header.origin;
         
         if (!requestOrigin) {
-          return null; // Block requests without origin (e.g., same-origin, curl, postman)
+          return '*';
         }
 
         // Always allow your production frontend and local development
@@ -53,12 +51,13 @@ export default [
           return requestOrigin;
         }
 
-        // Log blocked origins for debugging (optional)
-        console.log('Blocked CORS origin:', requestOrigin);
-        return null; // Block everything else
+        // If origin is not allowed, return the first allowed origin instead of null
+        // to prevent a complete failure in some scenarios.
+        return allowedOrigins[0];
       },
-      keepHeader: true,
-      credentials: true, // Add this if you need cookies/auth
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'HEAD', 'PATCH', 'OPTIONS'],
+      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
+      keepHeaderOnError: true,
     },
   },
   'strapi::poweredBy',
